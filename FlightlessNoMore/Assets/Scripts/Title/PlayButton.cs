@@ -12,22 +12,6 @@ public class PlayButton : MonoBehaviour
     }
     [SerializeField] private ButtonType buttonType;
 
-    private void Start()
-    {
-        // Continueボタンの場合、セーブデータがなければ非表示にする
-        if (buttonType == ButtonType.Continue)
-        {
-            // SaveManagerが存在しない場合は何もしない
-            if (SaveManager.Instance == null)
-                return;
-            // セーブデータファイルが存在しなければ非表示
-            if (!System.IO.File.Exists(UnityEngine.Application.persistentDataPath + "/save.json"))
-            {
-                gameObject.SetActive(false);
-            }
-        }
-    }
-
     private async void OnMouseDown()
     {
         switch (buttonType)
