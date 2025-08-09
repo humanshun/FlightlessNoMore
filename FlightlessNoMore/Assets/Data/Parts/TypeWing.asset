@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a83e2a3588c77e941a6c2c96ea4b6d0e, type: 3}
+  m_Name: TypeWing
+  m_EditorClassIdentifier: 
+  wingParts:
+  - {fileID: 11400000, guid: d827b0b9f30072c4d9d01378796ed652, type: 2}
+  - {fileID: 11400000, guid: 0b9dcce4078ee4f4583effdd92b0115b, type: 2}
+  - {fileID: 11400000, guid: 817dc08b2dc019848b19b6b5b44a7b6d, type: 2}
+  - {fileID: 11400000, guid: 4308308bf0755b740828b2dae99893c5, type: 2}
+  - {fileID: 11400000, guid: 0a26eabe577e3ee4196a0d335ad39fa1, type: 2}
+  - {fileID: 11400000, guid: 9160a9236973fdf478a99c85c215857f, type: 2}

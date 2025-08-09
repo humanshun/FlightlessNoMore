@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a2d0968ca430a5449e4bab96589e731, type: 3}
+  m_Name: TypeRocket
+  m_EditorClassIdentifier: 
+  rocketParts:
+  - {fileID: 11400000, guid: 5502d2dc500ff4741aa948f4ebcc002e, type: 2}
+  - {fileID: 11400000, guid: 9666d6a41475d2549b760ed08f475d0c, type: 2}
+  - {fileID: 11400000, guid: 9cadc0687fefc2742826f4bbeca0541d, type: 2}
+  - {fileID: 11400000, guid: f14194ff5587de34a8fb8adf59c8fce9, type: 2}
+  - {fileID: 11400000, guid: 32fdd6494609c2a49a5d3f1abf834647, type: 2}
+  - {fileID: 11400000, guid: f8b2818a46bbaea4c9c08971817eec56, type: 2}
+  - {fileID: 11400000, guid: 02ebef5910133ed45a7509d5f82d3f80, type: 2}
+  - {fileID: 11400000, guid: 19aa4fc96c96b00489c482c2664bec64, type: 2}
+  - {fileID: 11400000, guid: fe72bf306a1917f4da1d738cdbc0bfca, type: 2}
+  - {fileID: 11400000, guid: 9f2d80daa09af1c43a703d331d800d02, type: 2}

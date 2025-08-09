@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55088380935eb594d832ef0c94faf4e2, type: 3}
+  m_Name: ShopData
+  m_EditorClassIdentifier: 
+  typeBody: {fileID: 11400000, guid: 5a15fc4b4ea38b148ac1a470382acc94, type: 2}
+  typeRocket: {fileID: 11400000, guid: 5cf7d5315c6ad5a4d85a8811b61132fa, type: 2}
+  typeWing: {fileID: 11400000, guid: c335d525a1ec37144877d2094e1fe479, type: 2}
+  typeTire: {fileID: 11400000, guid: 676366d0e3678a544bc3bf219aad15d4, type: 2}

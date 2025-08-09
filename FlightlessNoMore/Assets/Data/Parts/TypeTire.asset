@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22c8df03ea3d2c54b9b1e7f0f8a2acc7, type: 3}
+  m_Name: TypeTire
+  m_EditorClassIdentifier: 
+  tireParts:
+  - {fileID: 11400000, guid: 505910786b490d24e90a12f49ca94c8b, type: 2}
+  - {fileID: 11400000, guid: 0146a8dd492777649aa15bbc13ca3e1a, type: 2}
+  - {fileID: 11400000, guid: 9bb3b73de6159d946ad477ad9fff3069, type: 2}
+  - {fileID: 11400000, guid: d83d19dbfd49e9349a8e7b380cebc429, type: 2}
+  - {fileID: 11400000, guid: d273be885527597428845e2aab0cb44c, type: 2}
+  - {fileID: 11400000, guid: 208b3bbe982ad0941b88883ca556d657, type: 2}
+  - {fileID: 11400000, guid: 00cb8cce5e0e96640a41bb70d65ee20e, type: 2}
