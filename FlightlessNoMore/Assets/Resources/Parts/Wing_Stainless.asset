@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77f9830f24711f742a9890c4eece963a, type: 3}
+  m_Name: Wing_Stainless
+  m_EditorClassIdentifier: 
+  partName: "\u9244\u88FD\u30C4\u30D0\u30B5"
+  resaurceFileName: Wing_Stainless
+  partPrefab: {fileID: 4058626305211470607, guid: 9a50b02bd04183d418271223323e4c6e, type: 3}
+  weight:
+    displayName: "\u91CD\u91CF"
+    value: 30
+  partCost:
+    displayName: "\u91D1\u984D"
+    value: 3000
+  partType: 3
+  partDescription: "\u56FA\u3044\u304C\u91CD\u3044"
+  partIconImage: {fileID: -8686851223353492381, guid: 2497b573a31e33645b931c1a1a74a590, type: 3}
+  airResistance:
+    displayName: "\u7A7A\u6C17\u62B5\u6297"
+    value: 0.05
+  airControl:
+    displayName: "\u7A7A\u4E2D\u5236\u5FA1"
+    value: 60

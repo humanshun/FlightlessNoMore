@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56d0fbdf49b472544abee5ca8fd61a2b, type: 3}
+  m_Name: Body_Flame
+  m_EditorClassIdentifier: 
+  partName: "\u30D5\u30EC\u30FC\u30E0\u30DC\u30C7\u30A3"
+  resaurceFileName: Body_Flame
+  partPrefab: {fileID: 482707365894644521, guid: f256e39c136b6d74e81d6868b9ea2ec7, type: 3}
+  weight:
+    displayName: "\u91CD\u91CF"
+    value: 30
+  partCost:
+    displayName: "\u91D1\u984D"
+    value: 1000
+  partType: 0
+  partDescription: "\u30B9\u30B1\u30EB\u30C8\u30F3\uFF01"
+  partIconImage: {fileID: 3246447395043074352, guid: 2baefc41ea855564c9994ce494ca8d37, type: 3}
+  airResistance:
+    displayName: "\u7A7A\u6C17\u62B5\u6297"
+    value: 0.07
+  hp:
+    displayName: "\u4F53\u529B"
+    value: 15
+  rocketPosition: {x: -3.4, y: 1}
+  wingPosition: {x: 0, y: 1.5}
+  rightTirePosition: {x: -1.3, y: 0.15}
+  leftTirePosition: {x: 2.48, y: 0.15}

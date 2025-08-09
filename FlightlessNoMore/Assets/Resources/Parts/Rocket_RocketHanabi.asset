@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56f70f85ef5a41447979281f9d74ad42, type: 3}
+  m_Name: Rocket_RocketHanabi
+  m_EditorClassIdentifier: 
+  partName: "\u30ED\u30B1\u30C3\u30C8\u82B1\u706B"
+  resaurceFileName: Rocket_RocketHanabi
+  partPrefab: {fileID: 764101576814905923, guid: a2d84cf2799a30a43b225eefd8814732, type: 3}
+  weight:
+    displayName: "\u91CD\u91CF"
+    value: 1
+  partCost:
+    displayName: "\u91D1\u984D"
+    value: 0
+  partType: 1
+  partDescription: "\u304D\u308C\u3044\u306A\u82B1\u706B"
+  partIconImage: {fileID: 2662617919679331371, guid: a190d48f54b126d4abdaef41945e1fe1, type: 3}
+  jetThrust:
+    displayName: "\u5674\u5C04\u529B"
+    value: 30
+  jetTime:
+    displayName: "\u5674\u5C04\u6642\u9593"
+    value: 2
+  effectPosition: {x: -0.74, y: 0}

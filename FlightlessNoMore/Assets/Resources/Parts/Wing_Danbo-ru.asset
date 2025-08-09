@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77f9830f24711f742a9890c4eece963a, type: 3}
+  m_Name: Wing_Danbo-ru
+  m_EditorClassIdentifier: 
+  partName: "\u6BB5\u30DC\u30FC\u30EB"
+  resaurceFileName: Wing_Danbo-ru
+  partPrefab: {fileID: 3444109036514365600, guid: 6980b7bff1e877e4a81e3a313c48fdeb, type: 3}
+  weight:
+    displayName: "\u91CD\u91CF"
+    value: 10
+  partCost:
+    displayName: "\u91D1\u984D"
+    value: 100
+  partType: 3
+  partDescription: "\u6C34\u306B\u6FE1\u308C\u305F\u3089\u8106\u3044"
+  partIconImage: {fileID: -3734467972522761026, guid: 98edec2292ffb2147bb6dab1596c1406, type: 3}
+  airResistance:
+    displayName: "\u7A7A\u6C17\u62B5\u6297"
+    value: 0.09
+  airControl:
+    displayName: "\u7A7A\u4E2D\u5236\u5FA1"
+    value: 40

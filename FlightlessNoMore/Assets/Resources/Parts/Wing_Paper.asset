@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77f9830f24711f742a9890c4eece963a, type: 3}
+  m_Name: Wing_Paper
+  m_EditorClassIdentifier: 
+  partName: "\u30AB\u30DF\u30C4\u30D0\u30B5"
+  resaurceFileName: Wing_Paper
+  partPrefab: {fileID: 6816369541522818640, guid: 51715d1bef657bc49be765dc01347ad4, type: 3}
+  weight:
+    displayName: "\u91CD\u91CF"
+    value: 5
+  partCost:
+    displayName: "\u91D1\u984D"
+    value: 0
+  partType: 3
+  partDescription: "\u8EFD\u3044\u304C\u8106\u3044"
+  partIconImage: {fileID: -8926382406018718195, guid: 264b23ae29be84d4fa99a4c8d8d77ded, type: 3}
+  airResistance:
+    displayName: "\u7A7A\u6C17\u62B5\u6297"
+    value: 0.1
+  airControl:
+    displayName: "\u7A7A\u4E2D\u5236\u5FA1"
+    value: 30

@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56d0fbdf49b472544abee5ca8fd61a2b, type: 3}
+  m_Name: Body_Danbo-ru
+  m_EditorClassIdentifier: 
+  partName: "\u51B7\u8535\u5EAB\u6BB5\u30DC\u30FC\u30EB"
+  resaurceFileName: Body_Danbo-ru
+  partPrefab: {fileID: 7410604593853858804, guid: fdb861afd878506489db79b00967e8c9, type: 3}
+  weight:
+    displayName: "\u91CD\u91CF"
+    value: 15
+  partCost:
+    displayName: "\u91D1\u984D"
+    value: 100
+  partType: 0
+  partDescription: "\u51B7\u8535\u5EAB\u3092\u8CB7\u3063\u305F\u3068\u304D\u306E\u6BB5\u30DC\u30FC\u30EB"
+  partIconImage: {fileID: -920528429157208796, guid: d298cd62c2a36d24f84f68b6e68398bc, type: 3}
+  airResistance:
+    displayName: "\u7A7A\u6C17\u62B5\u6297"
+    value: 0.1
+  hp:
+    displayName: "\u4F53\u529B"
+    value: 10
+  rocketPosition: {x: -1.2, y: 1}
+  wingPosition: {x: 0, y: 1.58}
+  rightTirePosition: {x: -1.3, y: 0.15}
+  leftTirePosition: {x: 1.3, y: 0.15}

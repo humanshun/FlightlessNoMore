@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56f70f85ef5a41447979281f9d74ad42, type: 3}
+  m_Name: Rocket_Rocket1
+  m_EditorClassIdentifier: 
+  partName: "\u30DF\u30CB\u30ED\u30B1\u30C3\u30C8"
+  resaurceFileName: Rocket_Rocket1
+  partPrefab: {fileID: 6493339363345070159, guid: 23df5552c11c0154fb8a72cee3892ad2, type: 3}
+  weight:
+    displayName: "\u91CD\u91CF"
+    value: 20
+  partCost:
+    displayName: "\u91D1\u984D"
+    value: 900
+  partType: 1
+  partDescription: "PESA\u3068\u5171\u540C\u958B\u767A\u3057\u305F"
+  partIconImage: {fileID: 3585359984692496149, guid: ff31a927e7897a24ba95988b4ffa301c, type: 3}
+  jetThrust:
+    displayName: "\u5674\u5C04\u529B"
+    value: 40
+  jetTime:
+    displayName: "\u5674\u5C04\u6642\u9593"
+    value: 8
+  effectPosition: {x: -0.92, y: 0}
