@@ -10,6 +10,7 @@ public class PlayerSaveData
 
     public float maxDistance;
     public float maxAltitude;
+    public bool isStarted;
 }
 
 [System.Serializable]

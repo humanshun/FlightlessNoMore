@@ -33,18 +33,41 @@ public class PlayerData : MonoBehaviour
 
     public static event System.Action OnAnyPartEquipped;
 
+    public bool IsStarted = false;
+
+    private const string KEY_CustomTutorialCompleted = "CustomTutorialCompleted";
+
+#if !UNITY_EDITOR
+    private const string FirstLaunchKey = "FirstLaunch_v8";
+#endif
+
     void Awake()
     {
-        // シングルトンパターン：すでに存在していれば自分を破棄、いなければ自分をInstanceとして残す
+        // ★ ビルド初回だけセーブを消す（キーはバージョン付きで更新可能）
+#if !UNITY_EDITOR
+        if (!PlayerPrefs.HasKey(FirstLaunchKey))
+        {
+            if (File.Exists(SavePath)) File.Delete(SavePath);
+
+            // 追加：初回ビルド時にチュートリアル系もリセット
+            PlayerPrefs.DeleteKey("InGameTutorialCompleted");
+            PlayerPrefs.DeleteKey(KEY_CustomTutorialCompleted);   // ★追加
+            PlayerPrefs.Save();
+
+            PlayerPrefs.SetInt(FirstLaunchKey, 1);
+            PlayerPrefs.Save();
+        }
+#endif
+        // ★ シングルトンは常に実行
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject); // シーンをまたいでも破棄されないようにする
-            LoadPlayerData(); // 起動時に保存データを読み込む
+            DontDestroyOnLoad(gameObject);
+            LoadPlayerData();
         }
         else
         {
-            Destroy(gameObject); // すでに存在しているなら自分を削除
+            Destroy(gameObject);
         }
     }
 
@@ -128,7 +151,8 @@ public class PlayerData : MonoBehaviour
             purchasedPartNames = purchasedParts,
             currentParts = new List<PartTypePartPair>(),
             maxDistance = MaxDistance,
-            maxAltitude = MaxAltitude
+            maxAltitude = MaxAltitude,
+            isStarted = IsStarted,
         };
 
         foreach (var kvp in currentParts)
@@ -162,15 +186,39 @@ public class PlayerData : MonoBehaviour
                     currentParts[pair.partType] = pair.partName; // パーツ名を保存
                 }
             }
+            IsStarted = saveData.isStarted;
         }
         else
         {
             // セーブデータがない場合は初期化
-            playerCoins = 2000;
+            playerCoins = 440100;
             MaxDistance = 0f;
             MaxAltitude = 0f;
-            purchasedParts = new List<string>();
+            purchasedParts = new List<string>
+            {
+                "紙ボディ",
+                "ロケット花火",
+                "キャスター",
+                "カミツバサ"
+            };
             currentParts = new Dictionary<PartType, string>();
+            IsStarted = false; // 初期化時は未開始状態
+
+            if (File.Exists(SavePath))
+            {
+                File.Delete(SavePath); // セーブファイルを削除
+                Debug.Log("セーブデータを削除しました。");
+            }
+
+            GameManager.Instance.ResetGameState(); // ゲームの状態をリセット
+
+            // 🔽 チュートリアルフラグもリセット
+            PlayerPrefs.DeleteKey("InGameTutorialCompleted");
+            PlayerPrefs.DeleteKey(KEY_CustomTutorialCompleted);
+            PlayerPrefs.Save();
+
+            SavePlayerData(); // 初期化後に保存
+            Debug.Log("プレイヤーデータを初期化しました。");
 
             // イベントを発火
             OnCoinsChanged?.Invoke(playerCoins);
@@ -205,8 +253,9 @@ public class PlayerData : MonoBehaviour
 
         // 🔽 チュートリアルフラグもリセット
         PlayerPrefs.DeleteKey("InGameTutorialCompleted");
+        PlayerPrefs.DeleteKey(KEY_CustomTutorialCompleted);
         PlayerPrefs.Save();
-
+        
         SavePlayerData(); // 初期化後に保存
         Debug.Log("プレイヤーデータを初期化しました。");
 

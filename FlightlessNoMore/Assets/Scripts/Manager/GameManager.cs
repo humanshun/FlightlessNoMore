@@ -74,11 +74,28 @@ public class GameManager : MonoBehaviour
             DontDestroyOnLoad(gameObject); // シーンをまたいでも破棄されないようにする
             PlayerData.OnPartPurchased += HandlePartPurchased;
             PlayerData.OnEquippedNonInitialPart += HandleChangePart;
+
+            SceneManager.sceneLoaded += OnSceneLoaded;
         }
         else
         {
             Destroy(gameObject); // すでに存在しているなら自分を削除
         }
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        // シーンロード時に毎回スポーン処理
+        TutorialShow(scene);
+    }
+
+    void OnDestroy()
+    {
+        PlayerData.OnPartPurchased -= HandlePartPurchased;
+        PlayerData.OnEquippedNonInitialPart -= HandleChangePart;
+
+        // ★ 追加：購読解除
+        SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 
     void Update()
@@ -113,35 +130,35 @@ public class GameManager : MonoBehaviour
             await SceneChanger.Instance.ChangeScene(sceneName, 1.0f, 1.0f);
         }
     }
-    void OnDestroy()
-    {
-        // シーンが破棄されるときにイベントを解除
-        PlayerData.OnPartPurchased -= HandlePartPurchased;
-        PlayerData.OnEquippedNonInitialPart -= HandleChangePart;
-    }
+
     public void TutorialShow(Scene scene)
     {
-        isGameOver = false; // シーンが読み込まれたらゲームオーバー状態をリセット
+        isGameOver = false;
 
         if (scene.name == "Custom")
         {
             Vector3 spawnPosition = new Vector3(-3.7f, -1.15f, 0f);
 
             if (playerInstance != null)
-            {
-                Destroy(playerInstance.gameObject); // 既存のインスタンスを削除
-            }
-            playerInstance = Instantiate(player, spawnPosition, Quaternion.identity);
+                Destroy(playerInstance.gameObject);
 
-            if (isClearCustomTutorial)
+            if (player == null)
             {
-                tutorialCustomPopup1.gameObject.SetActive(false);
+                Debug.LogError("[GameManager] player prefab is NULL. ProjectのPrefabを割り当ててください。");
                 return;
             }
-            else
+
+            playerInstance = Instantiate(player, spawnPosition, Quaternion.identity);
+
+            // ★ nullガード
+            if (tutorialCustomPopup1 != null)
             {
-                tutorialCustomPopup1.gameObject.SetActive(true); // チュートリアルポップアップを表示
-                tutorialCustomPopup1.DisableAllButtons();
+                if (isClearCustomTutorial) tutorialCustomPopup1.gameObject.SetActive(false);
+                else
+                {
+                    tutorialCustomPopup1.gameObject.SetActive(true);
+                    tutorialCustomPopup1.DisableAllButtons();
+                }
             }
         }
         else if (scene.name == "InGame")
@@ -149,23 +166,20 @@ public class GameManager : MonoBehaviour
             Vector3 spawnPosition = new Vector3(-3.7f, -32f, 0f);
 
             if (inGamePlayerInstance != null)
+                Destroy(inGamePlayerInstance.gameObject);
+
+            if (inGamePlayer == null)
             {
-                Destroy(inGamePlayerInstance.gameObject); // 既存のインスタンスを削除
-            }
-            inGamePlayerInstance = Instantiate(inGamePlayer, spawnPosition, Quaternion.identity);
-            OnInGamePlayerSpawned?.Invoke(inGamePlayerInstance); // イベントを発火して、InGamePlayerが生成されたことを通知
-            if (tutorialInGamePopup != null)
-            {
-                tutorialInGamePopup.gameObject.SetActive(false); // チュートリアルポップアップを非表示にする
+                Debug.LogError("[GameManager] inGamePlayer prefab is NULL. ProjectのPrefabを割り当ててください。");
+                return;
             }
 
-            if (isClearInGameTutorial)
+            inGamePlayerInstance = Instantiate(inGamePlayer, spawnPosition, Quaternion.identity);
+            OnInGamePlayerSpawned?.Invoke(inGamePlayerInstance);
+
+            if (tutorialInGamePopup != null)
             {
-                tutorialInGamePopup.gameObject.SetActive(false);
-            }
-            else
-            {
-                tutorialInGamePopup.gameObject.SetActive(true);
+                tutorialInGamePopup.gameObject.SetActive(!isClearInGameTutorial);
             }
         }
     }

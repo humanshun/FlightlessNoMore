@@ -142,7 +142,6 @@ public class TutorialInGame : MonoBehaviour
         if (currentStep >= tutorialPanels.Length)
         {
             Debug.Log("チュートリアルはすでに終了しています。");
-            tutorial = true;
             return;
         }
 
@@ -171,20 +170,6 @@ public class TutorialInGame : MonoBehaviour
             stepActive[currentStep] = true;
             GameManager.Instance.PauseAllAudio();
         }
-
-        // 最後のステップに到達したらチュートリアル完了処理
-        if (currentStep == tutorialPanels.Length - 1)
-        {
-            GameManager.Instance.isClearInGameTutorial = true;
-            tutorial = true;
-            Time.timeScale = 1f; // ゲームを再開
-            GameManager.Instance.isTutorial = false;
-
-            // チュートリアル完了フラグを保存
-            PlayerPrefs.SetInt("InGameTutorialCompleted", 1);
-            PlayerPrefs.Save();
-            Debug.Log("✅ チュートリアル完了として保存しました");
-        }
     }
 
     // 現在のステップを非表示にする処理（Enterキーやクリックで呼ばれる）
@@ -200,6 +185,20 @@ public class TutorialInGame : MonoBehaviour
             Time.timeScale = 1f;
             GameManager.Instance.isTutorial = false;
             GameManager.Instance.ResumeAllAudio();
+
+            // 最後のステップに到達したらチュートリアル完了処理
+            if (currentStep == tutorialPanels.Length - 1)
+            {
+                GameManager.Instance.isClearInGameTutorial = true;
+                tutorial = true;
+                Time.timeScale = 1f; // ゲームを再開
+                GameManager.Instance.isTutorial = false;
+
+                // チュートリアル完了フラグを保存
+                PlayerPrefs.SetInt("InGameTutorialCompleted", 1);
+                PlayerPrefs.Save();
+                Debug.Log("✅ チュートリアル完了として保存しました");
+            }
         }
     }
 

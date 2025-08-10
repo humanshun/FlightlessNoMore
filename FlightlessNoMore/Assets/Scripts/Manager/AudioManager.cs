@@ -21,6 +21,7 @@ public class AudioManager : MonoBehaviour
 
     // --- 初期化関連キー ---
     private const string KEY_INIT = "AudioInitialized";
+    private const string KEY_INIT_BUILD = "AudioInitialized_Build_v1";
     private const string KEY_BGM = "BGMVolume";
     private const string KEY_SFX = "SFXVolume";
     private const float DEFAULT_BGM = 0.5f;
@@ -42,6 +43,17 @@ public class AudioManager : MonoBehaviour
 
     private void Start()
     {
+#if !UNITY_EDITOR
+        // ★ビルド初回だけ既定値を上書き
+        if (!PlayerPrefs.HasKey(KEY_INIT_BUILD))
+        {
+            PlayerPrefs.SetFloat(KEY_BGM, DEFAULT_BGM);
+            PlayerPrefs.SetFloat(KEY_SFX, DEFAULT_SFX);
+            PlayerPrefs.SetInt(KEY_INIT, 1);       // ついでに通常フラグも立てる
+            PlayerPrefs.SetInt(KEY_INIT_BUILD, 1); // 初回済み印
+            PlayerPrefs.Save();
+        }
+#endif
         // ★ 初回起動時だけデフォルト値に設定
         InitializeAudioPrefsIfFirstLaunch();
 

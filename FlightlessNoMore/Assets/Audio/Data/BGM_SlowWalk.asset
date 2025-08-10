@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   soundName: BGM_SlowWalk
   clip: {fileID: 8300000, guid: 65a6780a3f16c374dbb5a748ce66c1ac, type: 3}
-  volume: 0.2
+  volume: 0.4
   loop: 1
